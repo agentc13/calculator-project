@@ -37,12 +37,14 @@ def calculator():
         calculation_function = operations[operation_symbol]
         answer = calculation_function(num1,num2)
         print(f"{num1} {operation_symbol} {num2} = {answer}")
-        cont = input(f"Type 'y' to continue calculating with {answer}, or press 'n' to exit.: ")
+        restart = input(f"Type 'y' to continue calculating with {answer}, or press 's' to start over, or press 'n' to exit.: ")
 
-        if cont == "y":
+        if restart == "y":
             num1 = answer
-        else:
+        elif restart == "s":
             cont = False
             calculator()
+        else:
+            cont = False
 
 calculator()
